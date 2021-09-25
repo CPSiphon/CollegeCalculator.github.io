@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.flex-container{
+    display: flex;
+}
+
+.flex-item{
+    flex: 1;
+}
+
+.full-height{
+    height: 100vh;
+}
+
+.flex-column{
+    flex-direction: column;
+}
