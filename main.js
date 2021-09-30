@@ -184,8 +184,8 @@ function calculateData()
 
 function updateSATvalue(e)
 {
-    SATinput = e.value * ((1600-SATlow)/100) + SATlow
-    SATvalue.innerText = SATinput
+    SATinput = e.value * ((1600 - SATlow)/100) + SATlow
+    SATvalue.innerText = SATinput.toFixed(2)
 }
 function updateGPAvalue(e)
 {
@@ -194,7 +194,7 @@ function updateGPAvalue(e)
 }
 function updateSATmedian()
 {
-    SATvalue.innerText = (SATlow + 1600)/2
+    SATvalue.innerText = (1600 + SATlow)/2
 }
 
 updateSATmedian()
