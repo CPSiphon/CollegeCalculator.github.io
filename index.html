@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="main.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="main.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
-
 <body>
-    <div class="container">
+    <div class="headerColor">
         <header class="d-flex justify-content-center py-3">
-          <ul class="nav nav-pills">
-            <li class="nav-item"><a href="./home.html" class="nav-link" >Home</a></li>
-            <li class="nav-item"><a href="./index.html" class="nav-link active" aria-current="page">Calculator</a></li>
-            <li class="nav-item"><a href="./about.html" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="./survey.html" class="nav-link">Survey</a></li>
-          </ul>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="./home.html" class="nav-link" >Home</a></li>
+                <li class="nav-item"><a href="./index.html" class="nav-link active" aria-current="page">Calculator</a></li>
+                <li class="nav-item"><a href="./about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="./survey.html" class="nav-link">Survey</a></li>
+            </ul>
         </header>
-      </div>
-      <div>
-          
-      </div>
-    <div class="container full-height">
-        <div class="row full-height">
+    </div>
+    <div class="container full-height no-margin-left">
+        <div class="row full-width full-height">
+            <div class="col container">
+                <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                      <span class="fs-5 fw-semibold">Colleges</span>
+                    </a>
+                    <ul id="sidebar" class="list-unstyled ps-0"> <!--SIDEBAR-->
+                     <div>
+                        <input id="search" type="text" placeholder="Search..">
+                     </div> 
+                      <li class="border-top my-3"></li> <!--THIS IS THE BORDER LINE-->
+                      
+                    </ul>
+                  </div>
+            </div>
             <div class="col container">
                 <div class="row">
                     <div class="col">
-                            <label for="SAT">SAT</label>
-                        <input type="range" name="SAT" id="SAT" onchange="updateSATvalue(this)">
-                        <div id="SATvalue">1350</div>
+                        <div id="chanceOutput">XX.XX%
+                        </div>
                     </div>
                     
                 </div>
                 <div class="row">
+                    <div class="col">
+                            <label for="SAT">SAT</label>
+                        <input type="range" name="SAT" id="SAT" onchange="updateSATvalue(this)">
+                        <div id="SATvalue">800</div>
+                    </div>
+                    
+                </div>
+                <!-- <div class="row">
                     <div class="col">
                             <label for="ACT">ACT</label>
                         <input type="range" name="ACT" id="ACT">
                     </div>
                     
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col">
                             <label for="GPA">GPA</label>
@@ -56,24 +74,21 @@
             <div class="col container">
                 <div class="row">
                     <div class="col">
-                            <label for="College">College</label>
-                        <select name="College" id="College">
-                            <option value="College">UCI</option>
-                            <option value="College">UCLA</option>
-
-                        </select>
-                        
+                        <h1>About the college</h1>
+                        <div id="collegeInfo"></div>
+                        <h3>For more info visit:</h3>
+                        <div id="collegeWebsite" onclick="openWebsite()"></div>
+                        <h3>College Majors</h3>
+                        <div id="collegeMajors"></div>
+                        <h3>Full College Majors list:</h3>
+                        <div id="collegeMajorsList" onclick="openList()"></div>
+                        <br>
+                        <div id="picture"></div>
+                        <br>
+                        <h4>Picture:</h4>
+                        <div id="pictureContext"></div>
+                        <div id="pictureWebsite" onclick="openPicture()"></div>
                     </div>
-                    
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <button id="button" type="button" onclick="calculateData()" class="btn btn-dark">Submit</button>
-                        <div id="chanceOutput">
-                            <label for="chanceOutput"></label>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </div>
